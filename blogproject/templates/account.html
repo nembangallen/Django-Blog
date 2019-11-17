@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>User's Profile</h2>
+    <p>Username: {{user.username}}</p>
+    <p>Name: {{user.userprofile.name}}</p>
+    <p>Image: <img src="{{user.userprofile.image.url}}" width="200px"></p>
+    <p>Email:{{user.email}}</p>
+    <p>Address:{{user.userprofile.address}}</p>
+    <a href="" class="btn btn-primary">Update</a>
+{% endblock %}

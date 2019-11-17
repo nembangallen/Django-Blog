@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <a href="{% url 'add_new' %}" class="btn btn-success">Add New Blog</a>
+
+        <table class="table">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Blog's Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for blog in object_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'blog_update' blog.pk %}" class="btn btn-primary">Update</a>
+                        <a href="{% url 'blog_delete' blog.pk %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+   
+{% endblock %}
