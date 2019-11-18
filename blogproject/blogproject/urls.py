@@ -50,6 +50,7 @@ urlpatterns = [
     path('settings/password/done/',auth_views.PasswordChangeDoneView.as_view(template_name='password_change_done.html'),
     name='password_change_done'),
     path('account/',accounts_views.account_detail,name="account"),
+    path('edit_user/<int:pk>/',accounts_views.UpdateAccountView.as_view(),name="edit_user"),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

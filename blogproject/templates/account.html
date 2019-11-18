@@ -7,5 +7,5 @@
     <p>Image: <img src="{{user.userprofile.image.url}}" width="200px"></p>
     <p>Email:{{user.email}}</p>
     <p>Address:{{user.userprofile.address}}</p>
-    <a href="" class="btn btn-primary">Update</a>
+    <a href="{% url 'edit_user' user.id %}" class="btn btn-primary">Update</a>
 {% endblock %}
